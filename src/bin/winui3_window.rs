@@ -70,7 +70,7 @@ impl Component for WindowDemo {
                     .text_wrapping(TextWrapping::Wrap),
                 TextBox::new()
                     .text(self.input.as_str())
-                    .placeholder_text("例如：杨锦江")
+                    .placeholder_text("例如：666")
                     .on_text_changed(context.callback(Message::Input)),
                 StackPanel::new()
                     .orientation(Orientation::Horizontal)
