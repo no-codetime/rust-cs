@@ -6,11 +6,12 @@
 
 ## 项目内容
 
-本工程是一个 Cargo 包，包含两个可执行目标：
+本工程是一个 Cargo 包，包含三个可执行目标：
 
 | 可执行文件 | 源码 | 说明 |
 | --- | --- | --- |
 | `rust-cs` | [src/main.rs](src/main.rs) | 控制台示例：打印提示、读取标准输入并回显，再用 `webbrowser` 打开本仓库主页 |
+| `guessing_game` | [src/bin/guessing_game.rs](src/bin/guessing_game.rs) | 猜数游戏练习：`rand` 生成 1~100 的秘密数字，读取输入并回显 |
 | `winui3_window` | [src/bin/winui3_window.rs](src/bin/winui3_window.rs) | WinUI 3 最小窗口示例：Mica 背景、`TextBox`、`Button`、`InfoBar`，演示 `windows-reactor` 的 Component / View 模型 |
 
 ## 环境要求
@@ -26,10 +27,13 @@
 # 控制台示例（bin 名与包名相同）
 cargo run --bin rust-cs
 
+# 猜数游戏
+cargo run --bin guessing_game
+
 # WinUI 3 窗口示例
 cargo run --bin winui3_window
 
-# 发布构建：两个可执行文件都会生成到 target/release/
+# 发布构建：三个可执行文件都会生成到 target/release/
 cargo build --release
 ```
 
@@ -39,6 +43,7 @@ cargo build --release
 
 | crate | 版本 | 用途 |
 | --- | --- | --- |
+| [`rand`](https://crates.io/crates/rand) | 0.10.3 | 生成随机数，猜数游戏用 `rand::rng().random_range(1..101)` 取 1~100 的秘密数字 |
 | [`webbrowser`](https://crates.io/crates/webbrowser) | 1.2.4 | 调用系统默认浏览器打开链接 |
 | [`windows-reactor`](https://crates.io/crates/windows-reactor) | 0.100 | 声明式 WinUI 3 库：`Component` 持有状态、处理类型化消息并返回 `View`，由 Reactor 把视图差异同步到原生控件树 |
 | [`winres`](https://crates.io/crates/winres) | 0.1.12 | 构建期依赖，把 `icon.ico` 编译进 exe 资源（见 [build.rs](build.rs)） |
@@ -65,6 +70,7 @@ rust-cs/
 ├── src/
 │   ├── main.rs               # 控制台示例
 │   └── bin/
+│       ├── guessing_game.rs  # 猜数游戏练习
 │       └── winui3_window.rs  # WinUI 3 窗口示例
 └── README.md
 ```
