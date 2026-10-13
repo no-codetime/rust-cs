@@ -6,6 +6,7 @@ edition = "2024"
 [dependencies]
 webbrowser = "1.2.4"
 windows-reactor = "0.100"
+rand = "0.10.3"
 
 [build-dependencies]
 winres = "0.1.12"
