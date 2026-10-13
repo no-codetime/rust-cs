@@ -11,7 +11,7 @@
 | 可执行文件 | 源码 | 说明 |
 | --- | --- | --- |
 | `rust-cs` | [src/main.rs](src/main.rs) | 控制台示例：打印提示、读取标准输入并回显，再用 `webbrowser` 打开本仓库主页 |
-| `guessing_game` | [src/bin/guessing_game.rs](src/bin/guessing_game.rs) | 猜数游戏练习：`rand` 生成 1~100 的秘密数字，读取输入并回显 |
+| `guessing_game` | [src/bin/guessing_game.rs](src/bin/guessing_game.rs) | 猜数游戏练习：`rand` 生成 1~100 的秘密数字，输入用 `parse` 转成数字后由 `cmp` + `match` 判断猜大、猜小还是猜中 |
 | `winui3_window` | [src/bin/winui3_window.rs](src/bin/winui3_window.rs) | WinUI 3 最小窗口示例：Mica 背景、`TextBox`、`Button`、`InfoBar`，演示 `windows-reactor` 的 Component / View 模型 |
 
 ## 环境要求
